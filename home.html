@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>home</title>
+  <link rel="stylesheet" href="style.css"></link>
+</head>
+
+<body>
+
+  <h1 style="text-align: center;">Welcome To My Page</h1>
+ 
+
+  <nav class="site-nav">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="stocks.html">Stocks</a></li>
+      <li><a href="dogs.html">Dogs</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    
+    <section class="hero">
+      <div class="action-buttons">
+        <a class="button-85" href="stocks.html">Stocks</a>
+        <a class="button-85" href="dogs.html">Dogs</a>
+      </div>
+    </section>
+
+    
+    <section class="quote-box">
+      <h3>Quote of the Page</h3>
+      <blockquote id="quote">
+        Loading…
+      </blockquote>
+    </section>
+
+    <section class="instructions">
+      <h3>In this web page there are options to Navigate using Audio!</h3>
+      <p>Ensure your mic is enabled to use these commands:</p>
+      <ul>
+        <li>
+          <strong>Navigate to a Different Page</strong>
+          <ul>
+            <li>Say: Navigate to &lt;Page&gt;</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Change the Page Color</strong>
+          <ul>
+            <li>Say: Change the color to &lt;Color&gt;</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Say Hello</strong>
+          <ul>
+            <li>Say: “Hello” → alerts Hello World back to you</li>
+          </ul>
+        </li>
+      </ul>
+      <div>
+        <button class="toggle-btn" onclick="toggleAudio(true)">Turn On Listening</button>
+        <button class="toggle-btn" onclick="toggleAudio(false)">Turn Off Listening</button>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/annyang@2.6.1/dist/annyang.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('https://zenquotes.io/api/random')
+        .then(res => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return res.json();
+        })
+        .then(data => {
+         
+          const quoteObj = data[0];
+          document.getElementById('quote').textContent =
+            `“${quoteObj.q}” — ${quoteObj.a}`;
+        })
+        .catch(err => {
+          console.error('Quote fetch failed:', err);
+          document.getElementById('quote').textContent =
+            'Sorry, could not load quote.';
+        });
+    });
+  </script>
+
+</body>
+
+</html>

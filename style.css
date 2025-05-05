@@ -1,0 +1,174 @@
+.site-header{
+  padding: 1rem;
+  text-align: center;
+}
+
+.site-nav{
+  background-color: cadetblue;
+  padding: 10px;
+}
+
+.site-nav ul, .site-nav li a {
+  list-style: none;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem
+}
+
+.site-nav li a {
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+}
+
+.site-nav li a:hover {
+  background: #00c3ff;
+  color: #000;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  background-color:chartreuse;          
+  padding: 20px;                 
+  max-width: 500px;           
+  margin: 2rem auto;              
+}
+
+.quote-box {
+  margin: 3rem auto;
+  padding: 3rem;
+  max-width: 700px;
+  background:bisque;
+  border-radius: 6px;
+}
+
+.stock-controls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1rem;
+}
+
+#redditTable {
+  margin: 1rem auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+#redditTable th, #redditTable td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+#breedButtons {
+  margin: 2rem auto;       
+  padding: 2rem;           
+
+  display: flex;          
+  flex-wrap: wrap;       
+  justify-content: center; 
+  align-items: center;     
+  gap: 1rem;             
+}
+
+#breedInfo {
+  background-color:#333;
+  color:white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(154, 12, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  text-decoration: none;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.action-buttons {
+  display: flex;             
+  justify-content: center;   
+  gap: 1rem;                
+  margin-top: 1rem;          
+}
+
+.slideshow {
+  display: flex;
+  flex-direction: column;   
+  align-items: center;       
+  gap: 1rem;               
+}
+
+.slideshow-controls {
+  display: flex;
+  gap: 3rem;                 
+}
