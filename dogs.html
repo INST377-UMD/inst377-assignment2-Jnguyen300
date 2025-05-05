@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doggies</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="dogs">
+
+  <header class="site-header">
+    <h1>Doggies</h1>
+  </header>
+
+  <nav class="site-nav">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="stocks.html">Stocks</a></li>
+      <li><a href="dogs.html">Dogs</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="slideshow">
+      <h2>Dog Slideshow</h2>
+      <img id="slideImage" src="" alt="Random dog" />
+      <div class="slideshow-controls">
+        <button id="prevBtn">◀</button>
+        <button id="nextBtn">▶</button>
+      </div>
+    </section>
+
+    <section class="breed-browser">
+      <h2>Browse Breeds</h2>
+      <div id="breedButtons"></div>
+      <div id="breedInfo" style="display: none;"></div>
+    </section>
+  </main>
+
+  <section class="instructions">
+    <h3>In this web page there are options to Navigate using Audio!</h3>
+    <p>Ensure your mic is enabled to use these commands:</p>
+    <ul>
+      <li>
+        <strong>Navigate to a Different Page</strong>
+        <ul>
+          <li>Say: Navigate to &lt;Page&gt;</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Change the Page Color</strong>
+        <ul>
+          <li>Say: Change the color to &lt;Color&gt;</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Say Hello</strong>
+        <ul>
+          <li>Say: “Hello” → alerts Hello World</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Load Dog Breed</strong>
+        <ul>
+          <li>Say: Load Dog Breed &lt;Dog Breed Name&gt;</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="audio-buttons">
+      <button class="toggle-btn" onclick="toggleAudio(true)">Turn On Listening</button>
+      <button class="toggle-btn" onclick="toggleAudio(false)">Turn Off Listening</button>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
